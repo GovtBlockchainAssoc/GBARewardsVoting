@@ -1,4 +1,4 @@
-*** GBA Governance & Reward Voting ***
+# GBA Governance & Reward Voting
 
 https://github.com/GovtBlockchainAssoc/GBARewardsVoting/blob/main/TokenRewardStructure.xlsx can be viewed as a (very rough) wire-frame of how GBA token reward voting works.  It would be really cool if the interface were graphical (using something like D3) but non-graphical is acceptable as well to get it live as soon as possible.  Programming environment is React – preferably in TypeScript but JavaScript is fine as well.  Microsoft Visual Studio is most convenient but any dev environment is fine.  
 
