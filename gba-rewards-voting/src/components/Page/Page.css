@@ -1,0 +1,39 @@
+:root {
+    --navy: rgb(0,56,120);
+}
+
+.Page {
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    margin: 1px;
+    border: 2px solid var(--navy);
+    width: 100%;
+}
+
+.gbaLogo {
+    margin: 2%;
+    margin-left: 5%;
+}
+
+.Content {
+    position: relative;
+    margin-top: 10%;
+}
+
+.Footer {
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--navy);
+    color: white;
+}
