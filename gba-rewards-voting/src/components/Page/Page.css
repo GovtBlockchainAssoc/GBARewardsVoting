@@ -8,28 +8,35 @@
 }
 
 .Header {
-    position: fixed;
+    position: relative;
     display: flex;
     align-items: center;
     margin: 1px;
     border: 2px solid var(--navy);
     width: 100%;
 }
-
+.logo-container {
+    height: 100%;
+    margin: 10px;
+    margin-bottom: 20px;
+}
 .gbaLogo {
-    margin: 2%;
-    margin-left: 5%;
+    width: 100%;
+    margin-left: 5%; 
 }
 
 .Content {
-    position: relative;
-    margin-top: 10%;
+    margin-bottom: 6%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-bottom: 2.5rem;
 }
 
 .Footer {
     position: absolute;
     bottom: 0;
-    height: 10%;
+    margin-top: 25px;
+    height: 2.5rem;
     width: 100%;
     display: flex;
     justify-content: center;

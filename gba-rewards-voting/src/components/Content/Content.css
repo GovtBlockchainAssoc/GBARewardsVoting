@@ -1,0 +1,9 @@
+.Content {
+    height: 70vh;
+    min-height: 460px;
+}
+.voting-container {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+}
