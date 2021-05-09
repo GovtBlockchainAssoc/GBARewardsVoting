@@ -1,44 +1,44 @@
-import React, { useState } from 'react';
 import { BsCaretDown, BsCaretUp } from "react-icons/bs";
-import styled from 'styled-components';
 
-
-function Domain() {
-
-    const Wrap = styled.div`
-    cursor: pointer
-    `;
-
-    const [clicked, setClicked] = useState(false);
-    const toggle = () => {
-        if(clicked) {
-            return setClicked(false)
-        }
-        setClicked(true)
-    }
+const Domain = ({ toggle, clicked, handleSubmit, state, Wrap }) => {
 
     return (
         <div className='choice' id='domain'>
-            <Wrap id='wrap' onClick={() => toggle()}>
-                <h1>Domain Blockchains</h1> 
-                <span>{clicked ? <BsCaretUp /> : <BsCaretDown />}</span>
-            </Wrap>
-            {clicked ? (
-                <div className='node'>
+            <div className={clicked === 'db' ? 'active' : 'inactive'}>
+                <Wrap className='wrap' onClick={toggle}>
+                    <div className='title'>
+                        <h1 id='db'>Domain Blockchains</h1> 
+                        <h6 className='result'>Result: <span className='span'>{state}</span></h6>
+                    </div>
+                    <span className='carrot' id='db'>{clicked === 'db' ? <BsCaretUp /> : <BsCaretDown />}</span>
+                </Wrap>
+                {clicked === 'db' ? (
+                    <div>
 
-                    <div className='options' id='emer-manage'>
-                        <p>Emergency Management</p>
-                    </div>
-                    <div className='options' id='health-deliver'>
-                        <p>Healthcare Delivery</p>
-                    </div>
-                    <div className='options' id='token-dash'>
-                        <p>Tokenomics Dashboard</p>
-                    </div>
+                        <form className='wrapper' onSubmit={handleSubmit}>
 
-                </div>
-            ) : null }
-            
+                            <div className='node'>
+
+                                <div className='options' id='emer-manage'>
+                                    <p>Emergency Management</p>
+                                    <input type='number' className='inputs' id='num1' name='num1'></input>
+                                </div>
+                                <div className='options' id='health-deliver'>
+                                    <p>Healthcare Delivery</p>
+                                    <input type='number' className='inputs' id='num2' name='num2'></input>
+                                </div>
+                                <div className='options' id='token-dash'>
+                                    <p>Tokenomics Dashboard</p>
+                                    <input type='number' className='inputs' id='num3' name='num3'></input>
+                                </div>
+
+                            </div>
+                            <button className='normalize' name='submit' value='submit'>Normalize</button>
+                        </form>
+
+                    </div>
+                ) : null }
+            </div>
             
         </div>
     )

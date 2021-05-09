@@ -2,17 +2,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 15%;
+    padding-right: 10px;
 }
 .node {
     display: flex;
 }
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result {
+    padding-top: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .options p {
     padding: 10px;
 }
-
-#wrap {
-    display: flex;
-}
-#wrap span {
+.normalize {
     padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.normalize:hover {
+    cursor: pointer;
+}
+
+.wrap {
+    display: flex;
+    width: 5%;
+
+}
+.wrap span {
+    padding-top: 50%;
+    padding-left: 5px;
+}
+
+h1 {
+    font-size: 1.3rem;
+    text-align: center;
 }

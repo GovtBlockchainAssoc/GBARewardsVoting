@@ -1,41 +1,29 @@
 import React, { useState } from 'react';
 import { BsCaretDown, BsCaretUp } from "react-icons/bs";
-import styled from 'styled-components';
 
-function ThoughtLeadership() {
-
-    const Wrap = styled.div`
-    cursor: pointer
-    `;
-
-    const [clicked, setClicked] = useState(false);
-    const toggle = () => {
-        if(clicked) {
-            return setClicked(false)
-        }
-        setClicked(true)
-    }
+function ThoughtLeadership({ toggle, clicked, handleSubmit, state, Wrap }) {
 
     return (
         <div className='choice' id='thought-leaders'>
-            <Wrap id='wrap' onClick={() => toggle()}>
-                <h1>Thought Leadership</h1> 
-                <span>{clicked ? <BsCaretUp /> : <BsCaretDown />}</span>
-            </Wrap>
+            <div className={clicked === 'tl' ? 'active' : 'inactive'}>
+                <Wrap className='wrap' onClick={toggle}>
+                    <h1 id='tl'>Thought Leadership</h1> 
+                    <span>{clicked === 'tl' ? <BsCaretUp /> : <BsCaretDown />}</span>
+                </Wrap>
 
-            {clicked ? (
-                <div className='node'>
+                {clicked === 'tl' ? (
+                    <div className='node'>
 
-                    <div className='options' id='white-papers'>
-                        <p>White Papers</p>
+                        <div className='options' id='white-papers'>
+                            <p>White Papers</p>
+                        </div>
+                        <div className='options' id='ext-groups'>
+                            <p>External Groups</p>
+                        </div>
+                    
                     </div>
-                    <div className='options' id='ext-groups'>
-                        <p>External Groups</p>
-                    </div>
-                
-                </div>
-            ) : null }
-
+                ) : null }
+            </div>
         </div>
     )
 };
