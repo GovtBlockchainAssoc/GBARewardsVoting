@@ -4,18 +4,19 @@ const Domain = ({ toggle, clicked, handleSubmit, state, Wrap }) => {
 
     return (
         <div className='choice' id='domain'>
-            <div className={clicked === 'db' ? 'active' : 'inactive'}>
-                <Wrap className='wrap' onClick={toggle}>
-                    <div className='title'>
-                        <h1 id='db'>Domain Blockchains</h1> 
-                        <h6 className='result'>Result: <span className='span'>{state}</span></h6>
-                    </div>
-                    <span className='carrot' id='db'>{clicked === 'db' ? <BsCaretUp /> : <BsCaretDown />}</span>
-                </Wrap>
-                {clicked === 'db' ? (
-                    <div>
+            <form className='wrapper' onSubmit={handleSubmit}>
 
-                        <form className='wrapper' onSubmit={handleSubmit}>
+                <div className={clicked === 'db' ? 'active' : 'inactive'}>
+                    <input name='main-vote' className='main-vote'></input>
+                    <Wrap className='wrap' onClick={toggle}>
+                        <div className='title'>
+                            <h1 id='db'>Domain Blockchains</h1> 
+                            <h6 className='result'>Result: <span className='span'>{state}</span></h6>
+                        </div>
+                        <span className='carrot' id='db'>{clicked === 'db' ? <BsCaretUp /> : <BsCaretDown />}</span>
+                    </Wrap>
+                    {clicked === 'db' ? (
+                        <div className='node-wrap'>
 
                             <div className='node'>
 
@@ -34,12 +35,11 @@ const Domain = ({ toggle, clicked, handleSubmit, state, Wrap }) => {
 
                             </div>
                             <button className='normalize' name='submit' value='submit'>Normalize</button>
-                        </form>
-
-                    </div>
-                ) : null }
-            </div>
-            
+                        
+                        </div>
+                    ) : null }
+                </div>
+            </form>
         </div>
     )
 };

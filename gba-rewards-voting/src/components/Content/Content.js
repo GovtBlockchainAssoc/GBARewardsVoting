@@ -31,6 +31,7 @@ function Content() {
         return total
     }
 
+    // CURRENTLY AFFECTS ALL COMPONENTS - FIX
     const [state, setState] = useState(0)
     const handleSubmit = (e) => {
         e.preventDefault()

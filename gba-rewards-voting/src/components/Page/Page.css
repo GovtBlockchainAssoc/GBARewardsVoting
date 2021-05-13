@@ -44,3 +44,7 @@
     background-color: var(--navy);
     color: white;
 }
+.rewards-vote {
+    margin-top: 20px;
+    font-size: 35px;
+}

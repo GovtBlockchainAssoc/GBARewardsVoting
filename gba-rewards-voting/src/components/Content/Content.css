@@ -6,6 +6,7 @@
     margin-top: 3%;
     display: flex;
     justify-content: space-evenly;
+    align-items: top;
 }
 
 .active {
@@ -13,17 +14,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
     position: absolute;
-    top: 35%;
+    top: 40%;
     right: 30%;
-
-    /* position: absolute;
-    top: 35%; right: 50%; */
-    /* transform: translate(50%,-50%); */
-
+}
+.active input {
+    width: 80px;
+    height: 20px;
 }
 .inactive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: red;
+}
+
+.node-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -7,6 +7,7 @@ function Page() {
     return (
         <div className='Page'>
             <Header />
+            <h1 className='rewards-vote'>GBA Rewards Voting</h1>
             <Content />
             <Footer />
         </div>
