@@ -5,6 +5,8 @@
 .Page {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: scroll;
 }
 
 .Header {
@@ -35,7 +37,7 @@
 .Footer {
     position: absolute;
     bottom: 0;
-    margin-top: 25px;
+    margin-top: 55px;
     height: 2.5rem;
     width: 100%;
     display: flex;
