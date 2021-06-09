@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    flex-direction: row;
+}
+.card-body {
+    width: 50vw;
+}
+.inputs {
+    width: 60px;
+    height: 30px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+.card-title {
+    font-size: 1rem;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion>.card>.card-header {
+    border-radius: 0;
+    margin-bottom: -1px;
+    width: 300px;
+    display: flex;
+    justify-content: left;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    width: 100%;
+    /* text-align: left; */
+}
+
+.norm-btn {
+    width: 300px !important;
+    margin-top: 30px !important;
+}
+
+.percentage, .sub-allot {
+    font-size: 0.7rem;
+}
+#tokens {
+    text-align: left;
+    font-size: 1.2rem;
+}
+.sub-allot {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
