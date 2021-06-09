@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
-import { Domain, Funding, GBBP, Members, Outreach, ThoughtLeadership, Training } from '../VotingSections';
-import styled from 'styled-components';
+import Accordion from 'react-bootstrap/Accordion';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
+import { Domain, Funding, GBBP, Members, Outreach, ThoughtLead, Training } from '../Categories'
 import './Content.css';
 
 function Content() {
 
-    const Wrap = styled.div`
-        cursor: pointer
-        `;
-        
-    const [clicked, setClicked] = useState('');
-    const toggle = e => {
-        setClicked(e.target.id)
-        console.log(clicked)
-        if (clicked === e.target.id) {
-            setClicked('')
-        }
-    };
-    
-    const normalize = () => {
+    const nums = document.getElementsByClassName('norm');
+    const normalize = (n) => {
         let total = 0;
-        const nums = document.getElementsByClassName('inputs');
-        let values = [];
-        for (let i = 0; i < nums.length; i++) {
-            values.push(parseInt(nums[i].value))
+        let values = [0];
+        for (let i = 0; i < n.length; i++) {
+            values.push(parseInt(n[i].value))
         }
         total = values.reduce((prevValue, currVal) => {
             return prevValue + currVal
@@ -31,27 +20,32 @@ function Content() {
         return total
     }
 
-    // CURRENTLY AFFECTS ALL COMPONENTS - FIX
     const [state, setState] = useState(0)
     const handleSubmit = (e) => {
         e.preventDefault()
-        setState(normalize());
+        setState(normalize(nums));
     }
 
+    const normCalc = (el, st, tok) => {
+        return (((el.value)/st)*tok).toFixed(2)
+    }
 
-    // const [vote, setVote] = useState(0);
-
+    const tokens = 100;
 
     return(
         <div className='Content'>
             <div className='voting-container'>
-                <Domain Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <Funding Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <GBBP Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <Members Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <Outreach Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <ThoughtLeadership Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
-                <Training Wrap={Wrap} toggle={toggle} clicked={clicked} normalize={normalize} state={state} handleSubmit={handleSubmit}/>
+                <h1 id='tokens'>Total Tokens: {tokens}</h1>
+                <Accordion>
+                    <Domain normCalc={normCalc} tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <Funding tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <GBBP tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <Members tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <Outreach tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <ThoughtLead tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <Training tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                </Accordion>
+                <Button className='norm-btn' onClick={handleSubmit}>Normalize</Button>
             </div>
         </div>
     )

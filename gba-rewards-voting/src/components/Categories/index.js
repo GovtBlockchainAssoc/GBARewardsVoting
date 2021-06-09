@@ -3,16 +3,7 @@ import Funding from './Funding';
 import GBBP from './GBBP';
 import Members from './Members';
 import Outreach from './Outreach';
-import ThoughtLeadership from './ThoughtLeadership';
+import ThoughtLead from './ThoughtLead';
 import Training from './Training';
-import './Sections.css'
 
-export {
-    Domain, 
-    Funding, 
-    GBBP,
-    Members,
-    Outreach,
-    ThoughtLeadership,
-    Training
-}
+export { Domain, Funding, GBBP, Members, Outreach, ThoughtLead, Training }
