@@ -10,6 +10,22 @@ const ThoughtLead = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     let res = null;
     catInput ? res = normCalc(catInput, state, tokens) : res = 0
 
+    const subVals = document.getElementsByClassName('tl-opt');
+    const [subState, setSub] = useState(0);
+    const handleSubSub = (e) => {
+        e.preventDefault()
+        setSub(normalize(subVals));
+    }
+    
+    const wp = document.getElementById('wp');
+    const eg = document.getElementById('eg');
+
+    let opt1 = 0;
+    let opt2 = 0;
+
+    res ? opt1 = normCalc(wp, subState, res) : opt1 = 0;
+    res ? opt2 = normCalc(eg, subState, res) : opt2 = 0;
+
     return (
         <Card className='card'>
                 <Card.Header>
@@ -23,12 +39,17 @@ const ThoughtLead = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
                     <Card.Body>
                     <div className='options' id='white-papers'>
                         <p className='cat'>White Papers</p>
-                        <input type='number' className='inputs' id='num1' name='num1'></input>
+                        <input type='number' className='inputs tl-opt' id='wp' name='num1'></input>
                     </div>
+                    <h3 className='sub-allot'>Allotment: {opt1}</h3>
+
                     <div className='options' id='ext-groups'>
                         <p className='cat'>External Groups</p>
-                        <input type='number' className='inputs' id='num2' name='num2'></input>
+                        <input type='number' className='inputs tl-opt' id='eg' name='num2'></input>
                     </div>
+                    <h3 className='sub-allot'>Allotment: {opt2}</h3>
+
+                    <Button onClick={handleSubSub}>Normalize</Button>
 
                     </Card.Body>
                 </Accordion.Collapse>
