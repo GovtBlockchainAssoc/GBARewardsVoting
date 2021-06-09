@@ -8,7 +8,7 @@ const Members = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     
     const catInput = document.getElementById('mem-in');
     let res = null;
-    {catInput ? res = (((catInput.value)/state)*tokens).toFixed(2) : res = 0}
+    catInput ? res = normCalc(catInput, state, tokens) : res = 0
 
     return (
         <Card className='card'>

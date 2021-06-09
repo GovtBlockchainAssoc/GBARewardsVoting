@@ -6,12 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Domain = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
 
-    
     const catInput = document.getElementById('dom-in');
     let res = null;
-    {catInput ? res = normCalc(catInput, state, tokens) : res = 0}
-    // {catInput ? res = (((catInput.value)/state)*tokens).toFixed(2) : res = 0}
-    console.log(`norm: ${res}`)
+    catInput ? res = normCalc(catInput, state, tokens) : res = 0
 
     const subVals = document.getElementsByClassName('dom-opt');
     const [subState, setSub] = useState(0);
@@ -27,9 +24,9 @@ const Domain = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     let opt1 = 0;
     let opt2 = 0;
     let opt3 = 0;
-    {res ? opt1 = normCalc(em, subState, res) : opt1 = 0}
-    {res ? opt2 = normCalc(hd, subState, res) : opt2 = 0}
-    {res ? opt3 = normCalc(td, subState, res) : opt3 = 0}
+    res ? opt1 = normCalc(em, subState, res) : opt1 = 0;
+    res ? opt2 = normCalc(hd, subState, res) : opt2 = 0;
+    res ? opt3 = normCalc(td, subState, res) : opt3 = 0;
 
 
     return (

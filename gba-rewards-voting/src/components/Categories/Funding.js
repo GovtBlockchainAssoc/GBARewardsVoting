@@ -8,7 +8,7 @@ const Funding = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
 
     const catInput = document.getElementById('fund-in');
     let res = null;
-    {catInput ? res = normCalc(catInput, state, tokens) : res = 0}
+    catInput ? res = normCalc(catInput, state, tokens) : res = 0;
 
     const subVals = document.getElementsByClassName('fund-opt');
     const [subState, setSub] = useState(0);
@@ -24,9 +24,9 @@ const Funding = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     let opt1 = 0;
     let opt2 = 0;
     let opt3 = 0;
-    {res ? opt1 = normCalc(con, subState, res) : opt1 = 0}
-    {res ? opt2 = normCalc(gr, subState, res) : opt2 = 0}
-    {res ? opt3 = normCalc(oth, subState, res) : opt3 = 0}
+    res ? opt1 = normCalc(con, subState, res) : opt1 = 0;
+    res ? opt2 = normCalc(gr, subState, res) : opt2 = 0;
+    res ? opt3 = normCalc(oth, subState, res) : opt3 = 0;
 
     return (
         <Card className='card'>

@@ -8,7 +8,7 @@ const GBBP = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
 
     const catInput = document.getElementById('gbbp-in');
     let res = null;
-    {catInput ? res = normCalc(catInput, state, tokens) : res = 0}
+    catInput ? res = normCalc(catInput, state, tokens) : res = 0
 
     const subVals = document.getElementsByClassName('gbbp-opt');
     const [subState, setSub] = useState(0);
@@ -29,13 +29,12 @@ const GBBP = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     let opt4 = 0;
     let opt5 = 0;
 
-    {res ? opt1 = normCalc(tok, subState, res) : opt1 = 0}
-    {res ? opt2 = normCalc(bes, subState, res) : opt2 = 0}
-    {res ? opt3 = normCalc(nod, subState, res) : opt3 = 0}
-    {res ? opt4 = normCalc(gat, subState, res) : opt4 = 0}
-    {res ? opt5 = normCalc(da, subState, res) : opt5 = 0}
+    res ? opt1 = normCalc(tok, subState, res) : opt1 = 0;
+    res ? opt2 = normCalc(bes, subState, res) : opt2 = 0;
+    res ? opt3 = normCalc(nod, subState, res) : opt3 = 0;
+    res ? opt4 = normCalc(gat, subState, res) : opt4 = 0;
+    res ? opt5 = normCalc(da, subState, res) : opt5 = 0;
 
-    console.log(da.value)
     return (
         <Card className='card'>
                 <Card.Header>
