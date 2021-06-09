@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Training = ({ tokens, normalize, state, handleSubmit }) => {
+const Training = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
 
     const catInput = document.getElementById('train-in');
     let res = null;

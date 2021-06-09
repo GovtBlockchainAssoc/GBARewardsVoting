@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const GBBP = ({ tokens, normalize, state, handleSubmit }) => {
+const GBBP = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
 
     const catInput = document.getElementById('gbbp-in');
     let res = null;

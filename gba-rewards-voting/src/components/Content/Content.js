@@ -37,13 +37,13 @@ function Content() {
             <div className='voting-container'>
                 <h1 id='tokens'>Total Tokens: {tokens}</h1>
                 <Accordion>
-                    <Domain normCalc={normCalc} tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <Funding tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <GBBP tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <Members tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <Outreach tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <ThoughtLead tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
-                    <Training tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize}/>
+                    <Domain tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <Funding tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <GBBP tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <Members tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <Outreach tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <ThoughtLead tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
+                    <Training tokens={tokens} state={state} handleSubmit={handleSubmit} normalize={normalize} normCalc={normCalc}/>
                 </Accordion>
                 <Button className='norm-btn' onClick={handleSubmit}>Normalize</Button>
             </div>

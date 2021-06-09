@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Members = ({ tokens, normalize, state, handleSubmit }) => {
+const Members = ({ tokens, normalize, state, handleSubmit, normCalc }) => {
     
     const catInput = document.getElementById('mem-in');
     let res = null;
